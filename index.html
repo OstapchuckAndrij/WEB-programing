@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>Валовий зовнішній борг України</title>
+</head>
+<body onload = "function()">
+    <div>
+        <h1>Валовий зовнішній борг України</h1>
+        <label for="Time">Дата:</label>
+        <input type="text" id="Time" name="Time"><br><br>
+        <button id="getCount">Отримати результат</button>
+        <p id="response"></p>
+    </div>
+    <script>
+        var Button = document.querySelector('#getCount');
+        var ResponseD = document.querySelector('#response');
+
+        Button.addEventListener("click", function(){
+            var Time = document.querySelector('#Time').value;
+            var apiUrl = `https://bank.gov.ua/NBUStatService/v1/statdirectory/grossextdebt?date=${Time}`;
+
+            var request = new XMLHttpRequest();
+	    request.open('GET', apiUrl);
+	    request.responseType = 'text';
+            request.onload = function(){
+                ResponseD.innerHTML = request.response;
+	    };
+	    request.send();
+        });
+    </script>
+</body>
+</html>
+
