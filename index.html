@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="utf-8">
+	<title>ShellSort</title>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href = "style.css">
+</head>
+<body>
+	<h1>ShellSort</h1>
+	<p>Введіть список чисел через кому</p>
+	<form>
+		<input type="text" id="input-list"><br>
+		<div class="button-container">
+			<button type="button" onclick="SortCount()">Наступна ітерація</button>
+			<button class="reset" type="button" onclick="ResetCount()"></button>
+		</div>
+	</form>
+	<p>Відсортований список:</p>
+	<div class="zip" id="sorted-list"></div>
+</body>
+</html>
